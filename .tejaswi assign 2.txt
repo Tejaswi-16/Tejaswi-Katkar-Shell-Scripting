@@ -1,0 +1,175 @@
+Working wit a Vi Editor:
+
+1. [admin@hostname01 temp]$ vi filename.txt
+
+Working shell 
+
+1.	Type some text on the shell separated by space 
+              This is a sample text in shell.
+
+           1: Move cursor one word back
+              Alt+b
+           2: Move cursor one word forward 
+              Alt+f
+           3: Move cursor to the first character
+              Ctrl+a
+           4: Move cursor to the end 
+              Ctrl+e
+           5: Delete test from second word to last character 
+              Ctrl+k
+           6: Delete the current line 
+              Ctrl+u
+
+2.[admin@hostname01 temp]$ cat err<Tab>
+3.[admin@hostname01 temp]$ history
+4.[admin@hostname01 temp]$ history | grep ls
+5.[admin@hostname01 temp]$ !!
+6.[admin@hostname01 temp]$ !3
+7.[admin@hostname01 temp]$ cat /etc/shells
+  /bin/sh
+  /bin/bash
+  /usr/bin/sh
+  /usr/bin/bash
+
+
+
+Understanding access permissions
+
+[admin@hostname01 temp]$ touch demofile
+1. [admin@hostname01 temp]$ chmod u-r demofile
+   [admin@hostname01 temp]$ cat demofile
+   cat: demofile: Permission denied
+2.[admin@hostname01 temp]$ chmod u-w demofile
+  [admin@hostname01 temp]$ vi demofile    
+3.[admin@hostname01 temp]$ chmod u+rw demofile
+4.[admin@hostname01 temp]$ chmod go-wx demofile
+5.[admin@hostname01 temp]$ g+w demofile
+  bash: g+w: command not found...
+6.[admin@hostname01 temp]$ chmod a+r demofile
+7.[admin@hostname01 temp]$ chmod o-r demofile
+8.[admin@hostname01 temp]$ chmod u+x chap1
+  chmod: cannot access 'chap1': No such file or directory
+9.[admin@hostname01 temp]$ chmod ugo+x add.c
+  chmod: cannot access 'add.c': No such file or directory
+10.[admin@hostname01 temp]$ chmod a+x add.c
+   chmod: cannot access 'add.c': No such file or directory
+11.[admin@hostname01 temp]$ chmod u-x,g+r,o+r aa.c
+   chmod: cannot access 'aa.c': No such file or directory
+
+
+7.2
+[admin@hostname01 temp]$ mkdir demo
+[admin@hostname01 temp]$ cp /etc/passwd demo/
+1.[admin@hostname01 temp]$ ls
+  demo  demofile  directorynew  friends  lsdoc  newdir1  newfriends    users
+2.[admin@hostname01 temp]$ chmod u-r demo
+  [admin@hostname01 temp]$ ls demo
+  ls: cannot open directory 'demo': Permission denied
+3.[admin@hostname01 temp]$ chmod u-w demo
+  [admin@hostname01 temp]$ cp /etc/profile demo/
+  cp: cannot create regular file 'demo/profile': Permission denied
+4.[admin@hostname01 temp]$ rm demo/passwd
+  rm: cannot remove 'demo/passwd': Permission denied
+5.[admin@hostname01 temp]$ chmod u-x demo
+  [admin@hostname01 temp]$ cd demo
+   bash: cd: demo: Permission denied
+
+ Using Process-Related Commands 
+
+1. [admin@hostname01 temp]$ ps -u USER
+error: user name does not exist
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+
+2. [admin@hostname01 temp]$ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.2 173888 16400 ?        Ss   Jan27   0:05 /usr/lib/syst
+root           2  0.0  0.0      0     0 ?        S    Jan27   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    Jan27   0:00 [pool_workque
+root           4  0.0  0.0      0     0 ?        I<   Jan27   0:00 [kworker/R-rc
+root           5  0.0  0.0      0     0 ?        I<   Jan27   0:00 [kworker/R-sy
+root           6  0.0  0.0      0     0 ?        I<   Jan27   0:00 [kworker/R-sl
+root           7  0.0  0.0      0     0 ?        I<   Jan27   0:00 [kworker/R-ne
+root          10  0.0  0.0      0     0 ?        I    Jan27   0:00 [kworker/u512
+root          11  0.0  0.0      0     0 ?        I<   Jan27   0:00 [kworker/R-mm
+root          12  0.0  0.0      0     0 ?        I    Jan27   0:00 [kworker/u512
+root          13  0.0  0.0      0     0 ?        I    Jan27   0:00 [rcu_tasks_kt
+root          14  0.0  0.0      0     0 ?        I    Jan27   0:00 [rcu_tasks_ru
+root          15  0.0  0.0      0     0 ?        I    Jan27   0:00 [rcu_tasks_tr
+root          16  0.0  0.0      0     0 ?        S    Jan27   0:00 [ksoftirqd/0]
+root          17  0.0  0.0      0     0 ?        I    Jan27   0:02 [rcu_preempt]
+root          18  0.0  0.0      0     0 ?        S    Jan27   0:00 [rcu_exp_par_
+root          19  0.0  0.0      0     0 ?        S    Jan27   0:00 [rcu_exp_gp_k
+root          20  0.0  0.0      0     0 ?        S    Jan27   0:00 [migration/0]
+root          21  0.0  0.0      0     0 ?        S    Jan27   0:00 [idle_inject/
+root          23  0.0  0.0      0     0 ?        S    Jan27   0:00 [cpuhp/0]
+root          24  0.0  0.0      0     0 ?        S    Jan27   0:00 [cpuhp/1]
+root          25  0.0  0.0      0     0 ?        S    Jan27   0:00 [idle_inject/
+root          26  0.0  0.0      0     0 ?        S    Jan27   0:02 [migration/1]
+root          27  0.0  0.0      0     0 ?        S    Jan27   0:00 [ksoftirqd/1]
+root          30  0.0  0.0      0     0 ?        S    Jan27   0:00 [cpuhp/2]
+root          31  0.0  0.0      0     0 ?        S    Jan27   0:00 [idle_inject/
+root          32  0.0  0.0      0     0 ?        S    Jan27   0:02 [migration/2]
+root          33  0.0  0.0      0     0 ?        S    Jan27   0:00 [ksoftirqd/2]
+root          36  0.0  0.0      0     0 ?        S    Jan27   0:00 [cpuhp/3]
+root          37  0.0  0.0      0     0 ?        S    Jan27   0:00 [idle_inject/
+root          38  0.0  0.0      0     0 ?        S    Jan27   0:02 [migration/3]
+root          39  0.0  0.0      0     0 ?        S    Jan27   0:00 [ksoftirqd/3]
+root          49  0.0  0.0      0     0 ?        S    Jan27   0:00 [kdevtmpfs]
+root          50  0.0  0.0      0     0 ?        I<   Jan27   0:00 [kworker/R-in
+root          51  0.0  0.0      0     0 ?        S    Jan27   0:00 [kauditd]
+root          52  0.0  0.0      0     0 ?        S    Jan27   0:00 [khungtaskd]
+
+3. [admin@hostname01 temp]$ sleep 300 &
+   [1] 10194
+   [admin@hostname01 temp]$ echo $!
+   10194
+
+4.[admin@hostname01 temp]$ command &
+   [2] 10206
+   [2]+  Done                    command
+
+5.[admin@hostname01 temp]$ fg
+   sleep 300
+
+6.[admin@hostname01 temp]$ sleep 300 &
+  [1] 10221
+  [admin@hostname01 temp]$ sleep 400 &
+  [2] 10226
+  [admin@hostname01 temp]$ sleep 500 &
+  [3] 10231
+  [admin@hostname01 temp]$ fg %1
+  sleep 300
+
+7.Ctrl + z
+
+8. [admin@hostname01 temp]$ bg
+   bash: bg: job 3 already in background
+
+9. [admin@hostname01 temp]$ some_command
+   bash: some_command: command not found..
+
+10.[admin@hostname01 temp]$ kill %%
+   [3]+  Terminated              sleep 500
+
+11.[admin@hostname01 temp]$ kill -9 $$
+
+12.[admin@hostname01 temp]$ nice -n -10 ls
+    nice: cannot set niceness: Permission denied
+    demo  demofile	directorynew  friends  lsdoc  newdir1      newfriends  users
+
+13. [admin@hostname01 temp]$ crontab -e
+
+
+
+
+
+ 
+
