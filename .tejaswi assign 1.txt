@@ -1,0 +1,230 @@
+Q.1  Input :-pwd
+     Output :-/home/admin
+Q.2  Input :-echo $HOME
+     Output :-/home/admin
+Q.3  Input :-whoami
+     Output :-admin
+Q.4  Input :-logname
+     Output :-admin
+Q.5  Input :- ls ~
+     Output :- Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+Q.6  Input :- ls $HOME
+     Output :-Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+Q.7  Input :-
+     Output :-
+
+Q.8  Input :- 
+     Output :-
+
+Q.9  Input :- mkdir ~C_prog
+     Output :-mkdir: cannot create directory ‘~C_prog’: File exists
+
+Q.10  Input :- ls -R ~
+     Output :-/home/admin:
+     '~C_prog'   Desktop     Downloads   Pictures   Templates
+     C_prog     Documents   Music       Public     Videos
+
+/home/admin/~C_prog:
+
+/home/admin/C_prog:
+
+/home/admin/Desktop:
+
+/home/admin/Documents:
+
+/home/admin/Downloads:
+photo-1603366615917-1fa6dad5c4fa.jpg
+
+/home/admin/Music:
+
+/home/admin/Pictures:
+
+/home/admin/Public:
+
+/home/admin/Templates:
+
+/home/admin/Videos:
+
+Q.11 Input :-rmdir newdirectory
+     Output :-rmdir: failed to remove 'newdirectory': No such file or directory
+Q.12 Input :-mkdir ~/temp
+     Output :-mkdir: cannot create directory ‘/home/admin/temp’: File exists
+Q.13 Input :-rmdir ~/newdir
+     Output :-rmdir: failed to remove '/home/admin/newdir': No such file or directory
+Q.14 Input :-mkdir ~/temp/directorynew
+     
+Q.15 Input :-cd~
+    
+Q.16 Input :-cd ../directorynew
+     Output :-bash: cd: ../directorynew: No such file or directory
+Q.17 Input :-rmdir ~/C_prog
+     Output :-bash: cd/etc: No such file or directory
+Q.18 Input :- cd/etc
+     Output :-bash: cd/etc: No such file or directory
+Q.19 Input :-ls -a /usr/bin directory | grep'^\'
+     Output :-ls: cannot access 'directory': No such file or               directory
+              bash: grep^\.: command not found...
+Q.20 Input :- [admin@hostname01 ~]$ touch first.unix
+     Input :-  [admin@hostname01 ~]$ echo "Hi! Good Morning.Welcome                to the first exercise on UNIX Hope you enjoy doing                   the assignments"
+     Output :- Hi! Good Morning.Welcome to the first exercise on                UNIX Hope you enjoy doing the assignments
+Q.21 Input :- cp ~/first.unix ~/first.unics
+   
+
+Q.22 Input :-cp ~/first.unix ~/first.unics
+     Output :-Hi! Good Morning.Welcome to the first exercise on                UNIX Hope you enjoy doing the assignments
+
+Q.23 Input :-mkdir temp/newdir1
+    
+
+Q.24 Input :-cp ~/*temp/newdir1
+     
+
+Q.25 Input :-mv first.unix /tmp/second.unix
+     
+
+Q.26 Input :-rm ~/first.unics
+     
+
+Q.27 Input :-[admin@hostname01 ~]$ cd temp
+             [admin@hostname01 temp]$ rm
+
+
+Q.28 Input :-mv *[aco]~
+     
+
+Q.29 Input :-cp *UNIX /tmp/
+    
+
+Q.30 Input :-rm -r /tmp/directory_name>
+     
+
+Q.31 Input :-[admin@hostname01 temp]$ cp
+             [admin@hostname01 temp]$ mv
+   
+
+Q.32 Input :-[admin@hostname01 temp]$ cat > friends
+Madhu 6966456 09/07/68
+
+Jamil 2345215 08/09/67
+
+Ajay 5546785 01/04/66
+
+Mano 7820022 09/07/68
+
+David 8281292 09/09/60
+
+Simmi 7864563 12/12/70
+
+Navin 2224311 30/05/68
+
+    
+
+Q.33 Input :-
+Madhu 6966456 09/07/68
+
+Jamil 2345215 08/09/67
+
+Ajay 5546785 01/04/66
+
+Mano 7820022 09/07/68
+
+David 8281292 09/09/60
+
+Simmi 7864563 12/12/70
+
+Navin 2224311 30/05/68
+
+   
+
+Q.34 Input :-[admin@hostname01 temp]$ cat friends>newfriends
+
+     
+
+Q.35 Input :-[admin@hostname01 temp]$ cat > friends
+             Madhu 6966456 09/07/68
+
+Jamil 2345215 08/09/67
+
+Ajay 5546785 01/04/66
+
+Mano 7820022 09/07/68
+
+David 8281292 09/09/60
+
+Simmi 7864563 12/12/70
+
+Navin 2224311 30/05/68
+
+  
+
+Q.36 Input :-[admin@hostname01 temp]$ who > users
+[admin@hostname01 temp]$ cat users
+
+
+     Output :-admin    seat0        2025-01-27 12:31 (login screen)
+admin    tty2         2025-01-27 12:31 (tty2)
+
+Q.37 Input :-[admin@hostname01 temp]$ cat friends >> users
+
+
+
+Q.38 Input :-[admin@hostname01 temp]$ date
+
+
+     Output :-Tue Jan 28 04:47:32 PM IST 2025
+
+Q.39  [admin@hostname01 temp]$ cal 04 2002
+     April 2002     
+Su Mo Tu We Th Fr Sa
+    1  2  3  4  5  6
+ 7  8  9 10 11 12 13
+14 15 16 17 18 19 20
+21 22 23 24 25 26 27
+28 29 30    
+                    
+
+
+Q.40 [admin@hostname01 temp]$ date "+%"
+%
+[admin@hostname01 temp]$ date "+%m"
+01
+[admin@hostname01 temp]$ date "+%D"
+01/29/25
+[admin@hostname01 temp]$ date "+/%Training Activity"
+/09:58:49raining Activity
+[admin@hostname01 temp]$ date "+%Training Activity"
+09:59:14raining Activity
+[admin@hostname01 temp]$ date "+%r"
+09:59:33 AM
+[admin@hostname01 temp]$ 
+
+
+
+
+
+Q.1 Input :-[admin@hostname01 temp]$ ls --help>lsdoc
+
+
+Q.2 Input :-[admin@hostname01 temp]$ less lsdoc
+
+
+Q.3 Input :-[admin@hostname01 temp]$ cat>data.txt
+
+
+Q.4 Input :-[admin@hostname01 temp]$ cat data.txt
+    
+
+Q.5 Input :-[admin@hostname01 temp]$ rm data.txt
+    
+
+Q.6 Input :-[admin@hostname01 temp]$ cat data.txt
+     
+
+Q.7 Input :-[admin@hostname01 temp]$ cat errorlog.txt
+    
+
+
+
+
+
+
