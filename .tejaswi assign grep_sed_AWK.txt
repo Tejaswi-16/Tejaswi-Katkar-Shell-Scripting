@@ -1,0 +1,44 @@
+[admin@hostname01 ~]$ cat > student.dat <<EOF
+name surname marks grade
+rameshchandra mane 79 A+
+suresh bahrti 88 A++
+rajat bhosle 25 C
+suraj pancholi 65 A
+manoj sharma 55 B
+rahul varma 87 A++
+manoj pandey 56 B
+suraj rajguru 45 B
+EOF
+1.[admin@hostname01 ~]$ egrep "^s" student.dat
+suresh bahrti 88 A++
+suraj pancholi 65 A
+suraj rajguru 45 B
+2.[admin@hostname01 ~]$ egrep "[ei]$" student.dat
+name surname marks grade
+3.[admin@hostname01 ~]$ egrep " 65 " student.dat
+suraj pancholi 65 A
+4.[admin@hostname01 ~]$ egrep " (Sharma|Varma) " student.dat
+5.[admin@hostname01 ~]$ egrep "A$" student.dat
+suraj pancholi 65 A
+6.[admin@hostname01 ~]$ egrep "^..r" student.dat
+suresh bahrti 88 A++
+suraj pancholi 65 A
+suraj rajguru 45 B
+7.[admin@hostname01 ~]$ egrep "^.a" student.dat
+name surname marks grade
+rameshchandra mane 79 A+
+rajat bhosle 25 C
+manoj sharma 55 B
+rahul varma 87 A++
+manoj pandey 56 B
+8.[admin@hostname01 ~]$ egrep "^[a-zA-Z]{5} " student.dat
+rajat bhosle 25 C
+suraj pancholi 65 A
+manoj sharma 55 B
+rahul varma 87 A++
+manoj pandey 56 B
+suraj rajguru 45 B
+9.[admin@hostname01 ~]$ egrep "^[a-zA-Z]{7,} " student.dat
+rameshchandra mane 79 A+
+10.[admin@hostname01 ~]$ egrep " [0-9]*6 " student.dat
+manoj pandey 56 B
